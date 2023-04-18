@@ -1,4 +1,4 @@
-## Flan-UL2-Dolly - Commercially Viable LLM
+## Flan-UL2-Dolly - Building a commercially viable LLM
 ## [Available On HuggingFace](https://huggingface.co/coniferlabs/flan-ul2-dolly-lora)
 
 This repository contains code for leveraging the [Dolly 15K](https://github.com/databrickslabs/dolly/tree/master/data) dataset [released by Databricks](https://github.com/databrickslabs/dolly/tree/master/data) to fine tune the [Flan-UL2](https://huggingface.co/google/flan-ul2) model, leveraging recent advances in instruction tuning. Flan-UL2 has been shown to outperform Flan-T5 XXL on a number of metrics and has a 4x improvement in receptive field (2048 vs 512 tokens). Additionally, both the Flan-UL2 model and the Dolly 15K dataset have the significant advantage of a commercially viable license.
