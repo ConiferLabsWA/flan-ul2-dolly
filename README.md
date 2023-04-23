@@ -6,11 +6,11 @@ This repository contains code for leveraging the [Dolly 15K](https://github.com/
 ### Resource Considerations
 
 A goal of this project was to produce this model with a limited budget demonstrating the ability train a robust, commercially viable LLM using systems available to even small businesses and individuals. This had the added benefit of personally saving me money as well :). To achieve this a server was rented on [vultr.com](vultr.com) with the following pricing/specs:
-- Pricing: $1.302/hour
+- Pricing: $2.604/hour
 - OS: Ubuntu 22.10 x64
-- 6 vCPUs
-- 60 GB CPU RAM
-- 40 GB GPU RAM (1/2 x A100)
+- 12 vCPUs
+- 120 GB CPU RAM
+- 80 GB GPU RAM (1 x A100)
 
 To dramatically reduce memory footprint and compute requirements [Low Rank Adaption(LoRA)](https://huggingface.co/docs/diffusers/training/lora) was used as opposed to finetuning the entire network. Additionally, the Flan-UL2 model was loaded and trained in 8 bit mode, also greatly reducing memory requirements. Finally, a batch size of 1 was used with 8 gradient accumulation steps. Here is a list of training parameters used:
 - Epochs: 3
@@ -50,7 +50,7 @@ cp libbitsandbytes_cuda120.so libbitsandbytes_cpu.so
 
 ### Training
 
-The following command will finetune the Flan-UL2 for 1 epoch. (1 epoch = ~13 hours on 1/2 x A100 [40GB VRAM])
+The following command will finetune the Flan-UL2 for 1 epoch. (1 epoch = ~13 hours on 1 x A100 [80GB VRAM])
 
 ```
 python train_lora.py
